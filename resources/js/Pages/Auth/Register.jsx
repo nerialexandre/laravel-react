@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
 import Button from '@/Components/Button';
-import Guest from '@/Layouts/Guest';
 import Input from '@/Components/Input';
 import Label from '@/Components/Label';
 import ValidationErrors from '@/Components/ValidationErrors';
+import Guest from '@/Layouts/Guest';
 import { Head, Link, useForm } from '@inertiajs/inertia-react';
+import { useEffect } from 'react';
 
 export default function Register() {
     const { data, setData, post, processing, errors, reset } = useForm({

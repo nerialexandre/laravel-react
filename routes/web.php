@@ -33,6 +33,13 @@ Route::get('/', function () {
     ]);
 });
 
+
+Route::get('/hello', function () {
+    return Inertia::render('Hello',[
+        'teste' => "texto de teste"
+    ]);
+});
+
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -66,6 +73,12 @@ Route::post('reset-password', [NewPasswordController::class, 'store'])
     ->name('password.update');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/hello2', function () {
+        return Inertia::render('Hello',[
+            'teste' => "texto de teste"
+        ]);
+    });
+
     Route::get('verify-email', [EmailVerificationPromptController::class, '__invoke'])
         ->name('verification.notice');
 
