@@ -25,12 +25,7 @@ use App\Http\Controllers\Auth\VerifyEmailController;
 */
 
 Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+    return redirect('dashboard');
 });
 
 
@@ -38,6 +33,10 @@ Route::get('/hello', function () {
     return Inertia::render('Hello',[
         'teste' => "texto de teste"
     ]);
+});
+
+Route::get('/inputs', function () {
+    return Inertia::render('Inputs');
 });
 
 Route::get('/dashboard', function () {
